@@ -8,7 +8,8 @@ export function MainScreen() {
   const { App } = window // The "App" comes from the bridge
 
   const navigate = useNavigate()
-  const store = useWindowStore().about
+  const storeAbout = useWindowStore().about
+  const storeApp = useWindowStore().app
 
   useEffect(() => {
     App.sayHelloFromBridge()
@@ -16,13 +17,24 @@ export function MainScreen() {
     App.whenAboutWindowClose(({ message }) => {
       console.log(message)
 
-      store.setAboutWindowState(false)
+      storeAbout.setAboutWindowState(false)
+    })
+
+    App.whenAppWindowClose(({ message }) => {
+      console.log(message)
+
+      storeApp.setAppWindowState(false)
     })
   }, [])
 
   function openAboutWindow() {
     App.createAboutWindow()
-    store.setAboutWindowState(true)
+    storeAbout.setAboutWindowState(true)
+  }
+
+  function openAppWindow() {
+    App.createAppWindow()
+    storeApp.setAppWindowState(true)
   }
 
   return (
@@ -33,10 +45,17 @@ export function MainScreen() {
 
       <nav>
         <Button
-          className={store.isOpen ? 'disabled' : ''}
+          className={storeApp.isOpen ? 'disabled' : ''}
+          onClick={openAppWindow}
+        >
+          Lancer l'application
+        </Button>
+
+        <Button
+          className={storeAbout.isOpen ? 'disabled' : ''}
           onClick={openAboutWindow}
         >
-          Open About Window
+          Mode d'emploi
         </Button>
 
         <Button onClick={() => navigate('anotherScreen')}>

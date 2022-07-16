@@ -4,6 +4,10 @@ export interface WindowStore {
   about: {
     isOpen: boolean
     setAboutWindowState: (value: boolean) => void
+  },
+  app: {
+    isOpen: boolean
+    setAppWindowState: (value: boolean) => void
   }
 }
 
@@ -16,6 +20,7 @@ export function useWindowStore() {
 export function WindowStoreProvider({ children }) {
   const [state, setState] = useState({
     about: { isOpen: false, setAboutWindowState },
+    app: { isOpen: false, setAppWindowState },
   })
 
   function setAboutWindowState(value: boolean) {
@@ -23,6 +28,16 @@ export function WindowStoreProvider({ children }) {
       ...state,
       about: {
         ...state.about,
+        isOpen: value,
+      },
+    }))
+  }
+
+  function setAppWindowState(value: boolean) {
+    setState((state) => ({
+      ...state,
+      app: {
+        ...state.app,
         isOpen: value,
       },
     }))

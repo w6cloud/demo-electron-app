@@ -1,0 +1,42 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.husky": true,
+			"**/.git": true,
+			"**/.github": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			"**/node_modules": true,
+			"**/*.lock": true,
+			"**/.editorconfig": true,
+			"**/.eslintrc.js": true,
+			"**/.gitignore": true,
+			"**/LICENSE": true,
+			"**/.swcrc": true
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"syler.sass-indented",
+			"esbenp.prettier-vscode",
+			"rvest.vs-code-prettier-eslint",
+			"ms-vscode.vscode-typescript-next",
+			"stringham.move-ts",
+			"miclo.sort-typescript-imports",
+			"kakumei.ts-debug",
+			"salbert.comment-ts",
+			"christian-kohler.npm-intellisense",
+			"VisualStudioExptTeam.vscodeintellicode",
+			"joshbolduc.commitlint",
+			"adam-bender.commit-message-editor"
+		]
+	}
+}

@@ -2,13 +2,13 @@
   "displayName": "My Awesome Electron App",
   "name": "my-awesome-electron-app",
   "description": "Your awesome app description",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "main": "./node_modules/.dev-temp-build/main.js",
   "devTempBuildFolder": "./node_modules/.dev-temp-build",
   "devServer": "http://localhost:4927",
   "author": {
-    "name": "Dalton Menezes",
-    "email": "daltonmenezes@outlook.com"
+    "name": "WEB6 Cloud",
+    "email": "hello@delay.web6.email"
   },
   "license": "MIT",
   "scripts": {

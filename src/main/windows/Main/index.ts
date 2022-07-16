@@ -4,6 +4,7 @@ import { join } from 'path'
 import { ENVIRONMENT } from 'shared/constants'
 import { createWindow } from 'main/factories'
 import { APP_CONFIG } from '~/app.config'
+import { truncate } from 'fs'
 
 const { MAIN, TITLE } = APP_CONFIG
 
@@ -15,8 +16,11 @@ export async function MainWindow() {
     height: MAIN.WINDOW.HEIGHT,
     center: true,
     movable: true,
-    resizable: false,
+    resizable: true,
+    maximizable: true,
+    minimizable: true,
     alwaysOnTop: true,
+    fullscreenable: true,
 
     webPreferences: {
       preload: join(__dirname, 'bridge.js'),
